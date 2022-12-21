@@ -8,7 +8,7 @@ export default function Ship() {
   const { nodes, materials } = useGLTF('/ship/ship_pinnace_2k.gltf');
 
   return (
-    <group ref={shipRef}>
+    <group ref={shipRef} position-x={15} position-y={-8} position-z={15}>
       <mesh
         name="ship_pinnace_aft"
         castShadow

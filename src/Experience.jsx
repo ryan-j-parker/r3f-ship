@@ -17,6 +17,14 @@ import {
   TrackballControls,
 } from '@react-three/drei';
 import Ship from './Ship';
+import DutchShip from './DutchShip';
+import Grass from './Grass';
+import Pier from './Pier';
+import Barrel from './Barrel';
+import Cannon from './Cannon';
+import Tree from './Tree';
+import Water from './OceanSeas';
+import OceanSeas from './OceanSeas';
 
 export default function Experience() {
   const props = {
@@ -24,8 +32,8 @@ export default function Experience() {
     position: [23, 12, 28],
     fov: 50,
     near: 1,
-    far: 100,
-    onUpdate: (self) => self.updateProjectionMatrix(),
+    far: 600,
+    // onUpdate: (self) => self.updateProjectionMatrix(),
   };
 
   return (
@@ -37,10 +45,17 @@ export default function Experience() {
         gl.antialias = true;
       }}
     >
-      <Environment background files={'./environment.hdr'} />
-      <Ship />
       <PerspectiveCamera {...props} />
       <Perf position="top-left" />
+      <Environment background files={'./environment.hdr'} />
+      <Ship />
+      <OceanSeas />
+      {/* <DutchShip /> */}
+      {/* <Barrel /> */}
+      {/* <Cannon /> */}
+      {/* <Tree />
+      <Grass />
+      <Pier /> */}
       <OrbitControls />
     </Canvas>
   );
